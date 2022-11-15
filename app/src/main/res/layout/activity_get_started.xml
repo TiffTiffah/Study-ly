@@ -1,56 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/get_started"
     tools:context=".GetStarted">
 
     <Button
-        android:id="@+id/get_button"
-        android:layout_width="248dp"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
-        android:backgroundTint="@color/purple"
-        android:fontFamily="@font/playfairdisplay_regular"
-        android:text="@string/get_started"
+        android:id="@+id/getstartedbtn"
+        android:layout_width="251dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="88dp"
+        android:text="Get Started"
+        android:textSize="18sp"
         android:textAllCaps="false"
-        android:textSize="22sp"
         android:textStyle="bold"
-
+        android:fontFamily="@font/nunito_medium"
+        android:backgroundTint="@color/purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.041"
         />
 
     <TextView
-        android:id="@+id/info_text"
-        android:layout_width="311dp"
-        android:layout_height="78dp"
-        android:layout_above="@+id/get_button"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="19dp"
-        android:fontFamily="@font/playfairdisplay_regular"
-        android:textStyle="bold"
-        android:padding="5dp"
-        android:text="@string/increase_your_productivity_with_our_cool_features"
-        android:textColor="@color/gray"
-        android:textSize="22dp" />
-
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        style="@style/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/info_text"
-        android:layout_marginLeft="35dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/playfairdisplay_extrabold"
-        android:text="@string/welcome_to_studyeasy"
-        android:textColor="@color/purple"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:layout_marginTop="52dp"
+        android:text="Get things done on time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        />
+    <ImageView
+        android:id="@+id/getstartedimg"
+        android:layout_width="294dp"
+        android:layout_height="339dp"
+        android:layout_marginTop="51dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_undraw_fashion_blogging_re_fhi5" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="The ultimate planning app "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getstartedimg" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/blob"
+        android:layout_width="177dp"
+        android:layout_height="413dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="26dp"
+        android:contentDescription="get started image"
+        app:layout_constraintBottom_toTopOf="@+id/getstartedimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417"
+        app:srcCompat="@drawable/ic_blob2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="312dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606"
+        app:srcCompat="@drawable/ic_blob2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

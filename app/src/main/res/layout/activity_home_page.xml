@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomePage"
-    android:background="@drawable/bubble"
+    android:background="@drawable/home"
     >
 
 
@@ -82,14 +82,14 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#d5ebff"
+        android:backgroundTint="@color/light_purple"
         android:drawableEnd="@drawable/ic_baseline_sticky_note_2_24"
-        android:drawableTint="@color/gray"
+        android:drawableTint="@color/white"
         android:fontFamily="@font/playfairdisplay_regular"
         android:text="@string/new_notes"
-        android:textColor="@color/gray"
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -102,14 +102,14 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#d5ebff"
+        android:backgroundTint="@color/light_purple"
         android:drawableEnd="@drawable/ic_baseline_checklist_24"
-        android:drawableTint="@color/gray"
+        android:drawableTint="@color/white"
         android:fontFamily="@font/playfairdisplay_regular"
         android:text="@string/new_tasks"
-        android:textColor="@color/gray"
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -122,14 +122,14 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#d5ebff"
+        android:backgroundTint="@color/light_purple"
         android:drawableEnd="@drawable/ic_baseline_calendar_month_24"
-        android:drawableTint="@color/gray"
+        android:drawableTint="@color/white"
         android:fontFamily="@font/playfairdisplay_regular"
         android:text="@string/new_events"
         android:textAlignment="textStart"
-        android:textColor="@color/gray"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 

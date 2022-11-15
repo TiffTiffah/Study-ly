@@ -15,13 +15,13 @@ public class GetStarted extends AppCompatActivity {
         setContentView(R.layout.activity_get_started);
 
 
-        Button get_btn = (Button) findViewById(R.id.get_button);
+        Button get_btn = (Button) findViewById(R.id.getstartedbtn);
         get_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),SignUp.class);
                 startActivity(intent);
-                finish();
+
             }
 
         });

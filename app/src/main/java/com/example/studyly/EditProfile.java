@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +23,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EditProfile extends AppCompatActivity {
 ImageView back_button;
+Button update;
 
 private FirebaseUser user;
 private DatabaseReference reference;
-private String userID;
+private String userID, name, email;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +49,8 @@ private String userID;
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView name_view = (TextView) findViewById(R.id.edit_name);
-        final TextView email_view = (TextView) findViewById(R.id.edit_email);
+        final EditText name_view = (EditText) findViewById(R.id.edit_name);
+        final EditText email_view = (EditText) findViewById(R.id.edit_email);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -53,8 +58,8 @@ private String userID;
                 User userProfile = snapshot.getValue(User.class);
                 if(userProfile != null)
                 {
-                    String name =userProfile.full_name;
-                    String email = userProfile.email;
+                     name =userProfile.full_name;
+                     email = userProfile.email;
 
                     name_view.setText(name);
                     email_view.setText(email);
@@ -71,5 +76,36 @@ private String userID;
         });
 
 
+        //update user profile
+
+         update = findViewById(R.id.edit_save);
+         update.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+
+                 reference.child(name).child("full_name").setValue(name_view.getText().toString());
+                 reference.child(email).child("email").setValue(email_view.getText().toString());
+
+                 Toast.makeText(EditProfile.this, "Changes Made!", Toast.LENGTH_SHORT).show();
+
+
+
+             }
+         });
+
+
+    }
+
+    private boolean isPasswordChanged() {
+
+        return true;
+    }
+
+    private boolean isEmailChanged() {
+        return  true;
+    }
+
+    private boolean isNameChanged() {
+        return  true;
     }
 }
