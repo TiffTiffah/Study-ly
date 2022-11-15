@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Study~ly</string>
+    <string name="get_started">Get Started</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_onboard">Welcome Onboard</string>
+    <string name="create_an_account_to_continue_exploring">Create an account to continue exploring</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_to_studyeasy">Welcome to Study~ly</string>
+    <string name="increase_your_productivity_with_our_cool_features">Increase Your Productivity With Our Cool Features</string>
+    <string name="welocme_bar">Welcome!\nLet\'s boost your\n productivity</string>
+    <string name="home">Home</string>
+    <string name="tasks">Tasks</string>
+    <string name="events">Events</string>
+    <string name="notes">Notes</string>
+    <string name="profile">Settings</string>
+    <string name="welcome">Welcome!\nLet\'s boost your\nproductivity.</string>
+    <string name="greetings">Hello Latifah!</string>
+    <string name="time_greeting">Good Morning!</string>
+    <string name="new_notes">Create a new note</string>
+    <string name="new_tasks">Get you tasks done</string>
+    <string name="new_events">Plan your days, weeks or months</string>
+    <string name="title_activity_menu_drawer">MenuDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="save">Save</string>
+
+    <string name="policy">Last updated on November 14, 2022\n\nWe respect your privacy and are committed to protecting it through our compliance with this privacy policy (“Policy”). This Policy describes the types of information we may collect from you or that you may provide (“Personal Information”) in the “StudyEasy” mobile application (“Mobile Application” or “Service”) and any of its related products and services (collectively, “Services”), and our practices for collecting, using, maintaining, protecting, and disclosing that Personal Information. It also describes the choices available to you regarding our use of your Personal Information and how you can access and update it.\n\nThis Policy is a legally binding agreement between you (“User”, “you” or “your”) and this Mobile Application developer (“Operator”, “we”, “us” or “our”). If you are entering into this agreement on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this agreement, in which case the terms “User”, “you” or “your” shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this agreement, you must not accept this agreement and may not access and use the Mobile Application and Services. By accessing and using the Mobile Application and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Policy. This Policy does not apply to the practices of companies that we do not own or control, or to individuals that we do not employ or manage.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

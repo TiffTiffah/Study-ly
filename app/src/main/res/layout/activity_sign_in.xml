@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignIn"
+    android:background="@drawable/sigin">
+
+    <TextView
+        android:id="@+id/welcome_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="310dp"
+        android:fontFamily="@font/playfairdisplay_extrabold"
+        android:text="Welcome Back!"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/signup_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_signup"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="Get back in track and let's get it done!"
+        android:textColor="#8756cb"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/email_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/signup_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edit_text_style"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="10dp"
+        android:drawableTint="#8756cb"
+        android:hint="Email address"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColor="@color/gray"
+        android:textColorHint="#8756cb"
+        android:textSize="18dp"
+
+        />
+
+    <EditText
+        android:id="@+id/password_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/email_login"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edit_text_style"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:textColor="@color/gray"
+        android:textColorHint="#8756cb"
+        android:drawableTint="#8756cb"
+        android:textSize="18dp"
+
+        />
+
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="248dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/password_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#8756cb"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="Sign In"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/acc_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="Don't have an account?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/signup_link"
+        android:layout_width="189dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/sign_in_button"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/acc_quiz"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:linksClickable="true"
+        android:paddingLeft="3dp"
+        android:text="Create account"
+        android:textColor="#8756cb"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484391960617",
+    "project_id": "studyly-3eecd",
+    "storage_bucket": "studyly-3eecd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484391960617:android:1957a6a7cbe1dcac045c38",
+        "android_client_info": {
+          "package_name": "com.example.studyly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484391960617-70ie2mp7q3ctk7bs7vb2nh9f6fcl4hm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0Gc0dSZ7NNefLRtIenl-8vJ8ap_BdRAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484391960617-70ie2mp7q3ctk7bs7vb2nh9f6fcl4hm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

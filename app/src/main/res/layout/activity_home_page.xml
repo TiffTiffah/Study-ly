@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="@drawable/home"
+    >
+
+
+    <TextView
+        android:id="@+id/greetings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/playfairdisplay_extrabold"
+        android:text="@string/greetings"
+        android:textColor="@color/purple"
+        android:textSize="30dp"
+
+        />
+
+    <TextView
+        android:id="@+id/time_greetings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/greetings"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/playfairdisplay_bold"
+        android:text="@string/time_greeting"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/image_block"
+        android:layout_width="391dp"
+        android:layout_height="167dp"
+        android:layout_below="@+id/time_greetings"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/welcome_bar"
+        android:orientation="horizontal"
+        android:paddingStart="5sp">
+
+        <TextView
+            android:id="@+id/welcome_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="10sp"
+            android:fontFamily="@font/playfairdisplay_bold"
+            android:text="@string/welcome"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="200dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="3dp"
+            android:contentDescription="image"
+            app:srcCompat="@drawable/image" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create_note"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/image_block"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#AF8AE1"
+        android:drawableEnd="@drawable/ic_baseline_sticky_note_2_24"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="@string/new_notes"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/create_tasks"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/create_note"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#AF8AE1"
+        android:drawableEnd="@drawable/ic_baseline_checklist_24"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="@string/new_tasks"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/create_event"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/create_tasks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#AF8AE1"
+        android:drawableEnd="@drawable/ic_baseline_calendar_month_24"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/playfairdisplay_regular"
+        android:text="@string/new_events"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/purple"
+        app:itemIconSize="30sp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</RelativeLayout>
