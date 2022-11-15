@@ -115,7 +115,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/playfairdisplay_regular"
                 android:text="Notifications"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/playfairdisplay_regular"
                 android:text="Themes"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -196,7 +196,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/playfairdisplay_regular"
                 android:text="About"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -217,13 +217,13 @@
 
             <TextView
                 android:id="@+id/terms"
-                android:linksClickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/playfairdisplay_regular"
+                android:linksClickable="true"
                 android:text="Terms and Privacy"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -250,7 +250,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/playfairdisplay_regular"
                 android:text="Contact Us"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -304,7 +304,7 @@
                 android:fontFamily="@font/playfairdisplay_regular"
                 android:linksClickable="true"
                 android:text="Log Out"
-                android:textColor="@color/purple"
+                android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

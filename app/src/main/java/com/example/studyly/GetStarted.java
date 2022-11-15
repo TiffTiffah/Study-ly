@@ -21,6 +21,7 @@ public class GetStarted extends AppCompatActivity {
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),SignUp.class);
                 startActivity(intent);
+                finish();
             }
 
         });

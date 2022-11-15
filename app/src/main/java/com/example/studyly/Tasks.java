@@ -45,10 +45,7 @@ public class Tasks extends AppCompatActivity {
                     case R.id.tasks:
                         return true;
 
-                    case R.id.events:
-                        startActivity(new Intent(getApplicationContext(),Events.class));
-                        overridePendingTransition(0,0);
-                        return true;
+
 
                     case R.id.notes:
                         startActivity(new Intent(getApplicationContext(),Notes.class));

@@ -25,7 +25,7 @@ public class Events extends AppCompatActivity {
         bottom_nav_menu = findViewById(R.id.bottom_nav);
 
         //setting the activity to the selected item
-        bottom_nav_menu.setSelectedItemId(R.id.events);
+
 
 
         //if the item that is not selected is clicked, open the activity
@@ -47,8 +47,7 @@ public class Events extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.events:
-                        return true;
+
 
                     case R.id.notes:
                         startActivity(new Intent(getApplicationContext(),Notes.class));

@@ -11,9 +11,18 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomePage extends AppCompatActivity {
 
@@ -22,6 +31,10 @@ public class HomePage extends AppCompatActivity {
     Button new_note;
     Button new_event;
     Button new_tasks;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +61,38 @@ public class HomePage extends AppCompatActivity {
             bottom_nav_menu.setSelectedItemId(R.id.home);
 
 
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+
+
+        final TextView greetings = findViewById(R.id.greetings);
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if(userProfile != null)
+                {
+                    String name =userProfile.full_name;
+                    String email = userProfile.email;
+
+                    greetings.setText("Hello "+name+"!");
+
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(HomePage.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
             //if the item that is not selected is clicked, open the activity
 
             bottom_nav_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -65,10 +110,7 @@ public class HomePage extends AppCompatActivity {
                             overridePendingTransition(0,0);
                             return true;
 
-                        case R.id.events:
-                            startActivity(new Intent(getApplicationContext(),Events.class));
-                            overridePendingTransition(0,0);
-                            return true;
+
 
                         case R.id.notes:
                             startActivity(new Intent(getApplicationContext(),Notes.class));

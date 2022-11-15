@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.security.Policy;
 
@@ -76,6 +77,17 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        //logout
+        TextView logging_out = findViewById(R.id.logout);
+        logging_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),SignIn.class));
+                finish();
+            }
+        });
+
 
 
 
@@ -107,10 +119,7 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.events:
-                        startActivity(new Intent(getApplicationContext(),Events.class));
-                        overridePendingTransition(0,0);
-                        return true;
+
 
                     case R.id.notes:
                         startActivity(new Intent(getApplicationContext(),Notes.class));

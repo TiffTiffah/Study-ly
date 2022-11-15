@@ -13,11 +13,7 @@
         android:title="@string/tasks"
         />
 
-    <item
-        android:icon="@drawable/ic_baseline_calendar_month_24"
-        android:id="@+id/events"
-        android:title="@string/events"
-        />
+
 
     <item
         android:icon="@drawable/ic_baseline_sticky_note_2_24"
