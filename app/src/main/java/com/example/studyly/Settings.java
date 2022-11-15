@@ -23,6 +23,7 @@ public class Settings extends AppCompatActivity {
     BottomNavigationView bottom_nav_menu;
     Button edit_profile;
     TextView policy;
+    TextView about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,30 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view) {
 
                 Fragment fragment = new policy();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.settings_container,fragment).addToBackStack(null).commit();
+            }
+        });
+
+        //open about
+        about = findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new about();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.settings_container,fragment).addToBackStack(null).commit();
+            }
+        });
+
+        //open contact us
+         TextView contact_us = findViewById(R.id.contacts);
+        contact_us.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new contacts();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.settings_container,fragment).addToBackStack(null).commit();
             }

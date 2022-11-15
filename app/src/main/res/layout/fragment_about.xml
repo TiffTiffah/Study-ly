@@ -3,7 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".about">
+    tools:context=".about"
+    android:background="@color/white"
+    android:elevation="2dp">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/purple">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="About Study~ly"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/progress" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/progress"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/general_settings"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/nunito_medium"
+        android:padding="10dp"
+        android:text="Study~ly is a interactive mobile applications mainly focused on boosting the user's productivity.\n\nIt has features like note-taking, tasks scheduling and planning of events.  "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
 
