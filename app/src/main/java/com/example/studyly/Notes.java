@@ -63,7 +63,10 @@ public class Notes extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-
+                    case R.id.events:
+                        startActivity(new Intent(getApplicationContext(),Events.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
                     case R.id.notes:
                         return true;

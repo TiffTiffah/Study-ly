@@ -51,14 +51,16 @@ public class HomePage extends AppCompatActivity {
             }
         });
         new_tasks = findViewById(R.id.create_tasks);
+        new_tasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTask();
+            }
+        });
+
         new_event = findViewById(R.id.create_event);
 
 
-            //reference the bottom nav menu
-            bottom_nav_menu = findViewById(R.id.bottom_nav);
-
-            //setting the activity to the selected item
-            bottom_nav_menu.setSelectedItemId(R.id.home);
 
 
 
@@ -91,39 +93,47 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+            //reference the bottom nav menu
+        bottom_nav_menu = findViewById(R.id.bottom_nav);
+
+        //setting the activity to the selected item
+        bottom_nav_menu.setSelectedItemId(R.id.home);
 
 
-            //if the item that is not selected is clicked, open the activity
+        //if the item that is not selected is clicked, open the activity
 
-            bottom_nav_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        bottom_nav_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                    switch (item.getItemId())
-                    {
-                        //if the selected activity which is home is selected just set true
-                        case R.id.home:
-                            return true;
+                switch (item.getItemId())
+                {
+                    //if the selected activity which is home is selected just set true
+                    case R.id.home:
+                        return true;
 
-                        case R.id.tasks:
-                            startActivity(new Intent(getApplicationContext(),Tasks.class));
-                            overridePendingTransition(0,0);
-                            return true;
+                    case R.id.tasks:
+                        startActivity(new Intent(getApplicationContext(),Tasks.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.events:
+                        startActivity(new Intent(getApplicationContext(),Events.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
 
-
-                        case R.id.notes:
-                            startActivity(new Intent(getApplicationContext(),Notes.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.settings:
-                            startActivity(new Intent(getApplicationContext(),Settings.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                    }
-                    return false;
+                    case R.id.notes:
+                        startActivity(new Intent(getApplicationContext(),Notes.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(),Settings.class));
+                        overridePendingTransition(0,0);
                 }
-            });
+                return false;
+            }
+        });
 
         }
 
@@ -137,7 +147,21 @@ public class HomePage extends AppCompatActivity {
                 noteDialog.setView(note_view);
 
         AlertDialog dialog = noteDialog.create();
-        dialog.setCancelable(false);
+        dialog.setCancelable(true);
+        dialog.show();
+
+
+    }
+    //newTask function
+    private void addTask() {
+        AlertDialog.Builder noteDialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        View note_view = inflater.inflate(R.layout.activity_new_task, null);
+        noteDialog.setView(note_view);
+
+        AlertDialog dialog = noteDialog.create();
+        dialog.setCancelable(true);
         dialog.show();
 
 

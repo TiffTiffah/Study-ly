@@ -11,10 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.security.Policy;
 
@@ -25,6 +32,10 @@ public class Settings extends AppCompatActivity {
     Button edit_profile;
     TextView policy;
     TextView about;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +48,37 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditProfile.class);
                 startActivity(intent);
+            }
+        });
+
+        final TextView p_name = findViewById(R.id.profile_name);
+        final TextView p_email = findViewById(R.id.profile_email);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if(userProfile != null)
+                {
+                    String name =userProfile.full_name;
+                    String email = userProfile.email;
+
+                    p_name.setText(name);
+                    p_email.setText(email);
+
+
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(Settings.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,6 +161,10 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
+                    case R.id.events:
+                        startActivity(new Intent(getApplicationContext(),Events.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
 
                     case R.id.notes:

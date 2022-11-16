@@ -119,7 +119,7 @@ public class SignUp extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
 
-                                        User user = new User(str_full_name,str_email);
+                                        User user = new User(str_full_name,str_email,str_confirm_password);
 
                                         //send data to the database
                                         FirebaseDatabase.getInstance().getReference("Users")

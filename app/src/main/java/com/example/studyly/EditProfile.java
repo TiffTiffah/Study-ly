@@ -27,7 +27,7 @@ Button update;
 
 private FirebaseUser user;
 private DatabaseReference reference;
-private String userID, name, email;
+private String userID, name, email, password, confirm_password;
 
 
     @Override
@@ -51,6 +51,9 @@ private String userID, name, email;
 
         final EditText name_view = (EditText) findViewById(R.id.edit_name);
         final EditText email_view = (EditText) findViewById(R.id.edit_email);
+        final EditText password_view = (EditText) findViewById(R.id.edit_password);
+        final EditText con_password_view = (EditText) findViewById(R.id.new_confirm_pass);
+
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -60,9 +63,13 @@ private String userID, name, email;
                 {
                      name =userProfile.full_name;
                      email = userProfile.email;
+                     password  =userProfile.password;
+                     confirm_password =userProfile.password;
 
                     name_view.setText(name);
                     email_view.setText(email);
+                    password_view.setText(password);
+                    con_password_view.setText(password);
 
 
                 }
@@ -83,8 +90,9 @@ private String userID, name, email;
              @Override
              public void onClick(View view) {
 
-                 reference.child(name).child("full_name").setValue(name_view.getText().toString());
-                 reference.child(email).child("email").setValue(email_view.getText().toString());
+                 reference.child(userID).child("full_name").setValue(name_view.getText().toString());
+                 reference.child(userID).child("email").setValue(email_view.getText().toString());
+                 reference.child(userID).child("password").setValue(password_view.getText().toString());
 
                  Toast.makeText(EditProfile.this, "Changes Made!", Toast.LENGTH_SHORT).show();
 
