@@ -51,7 +51,7 @@
         android:orientation="vertical"
         >
         <EditText
-            android:id="@+id/task_title"
+            android:id="@+id/task_descrpt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -66,7 +66,7 @@
             android:textColorHint="@color/gray"/>
 
         <Button
-            android:id="@+id/save_notes"
+            android:id="@+id/addTask_btn"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"

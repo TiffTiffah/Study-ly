@@ -8,10 +8,17 @@
         />
 
     <item
+        android:icon="@drawable/ic_baseline_sticky_note_2_24"
+        android:id="@+id/notes"
+        android:title="@string/notes"
+        />
+
+    <item
         android:icon="@drawable/ic_baseline_checklist_24"
         android:id="@+id/tasks"
         android:title="@string/tasks"
         />
+
 
     <item
         android:icon="@drawable/ic_baseline_calendar_month_24"
@@ -19,15 +26,7 @@
         android:title="Events"
         />
 
-
-
-    <item
-        android:icon="@drawable/ic_baseline_sticky_note_2_24"
-        android:id="@+id/notes"
-        android:title="@string/notes"
-        />
-
-    <item
+       <item
         android:icon="@drawable/ic_baseline_settings_24"
         android:id="@+id/settings"
         android:title="@string/profile"

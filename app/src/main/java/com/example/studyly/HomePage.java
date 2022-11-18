@@ -11,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +34,7 @@ public class HomePage extends AppCompatActivity {
     Button new_note;
     Button new_event;
     Button new_tasks;
+    Button add_task;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -150,19 +154,103 @@ public class HomePage extends AppCompatActivity {
         dialog.setCancelable(true);
         dialog.show();
 
+        //hooks
+        final ImageView cancel = note_view.findViewById(R.id.cancel);
+        final Button add_note = note_view.findViewById(R.id.save_notes);
+        final TextView note_title = note_view.findViewById(R.id.note_title);
+        final TextView note_content = note_view.findViewById(R.id.note_page);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Notes");
+        userID = user.getUid();
+
+        //close the alert dialog
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        //save the notes to database
+        add_note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reference.child(userID).child("Title").push().setValue(note_title.getText().toString());
+                reference.child(userID).child("Content").push().setValue(note_content.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(HomePage.this, "Note added!", Toast.LENGTH_SHORT).show();
+                                    dialog.dismiss();
+                                }
+                                else {
+                                    Toast.makeText(HomePage.this, "Task failed to save!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+            }
+        });
+
 
     }
     //newTask function
     private void addTask() {
-        AlertDialog.Builder noteDialog = new AlertDialog.Builder(this);
+        AlertDialog.Builder taskDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        View note_view = inflater.inflate(R.layout.activity_new_task, null);
-        noteDialog.setView(note_view);
+        View task_view = inflater.inflate(R.layout.activity_new_task, null);
+        taskDialog.setView(task_view);
 
-        AlertDialog dialog = noteDialog.create();
-        dialog.setCancelable(true);
+        AlertDialog dialog = taskDialog.create();
+        dialog.setCancelable(false);
         dialog.show();
+
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Tasks");
+        userID = user.getUid();
+
+        //hooks
+        final ImageView cancel = task_view.findViewById(R.id.cancel);
+        final Button add_task = task_view.findViewById(R.id.addTask_btn);
+        final TextView description = task_view.findViewById(R.id.task_descrpt);
+
+        //close the alert dialog
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        //save the tasks to database
+        add_task.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reference.child(userID).child("Description").push().setValue(description.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(HomePage.this, "Task added!", Toast.LENGTH_SHORT).show();
+                                    dialog.dismiss();
+                                }
+                                else {
+                                    Toast.makeText(HomePage.this, "Task failed to save!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+            }
+        });
+
+
+
 
 
     }
