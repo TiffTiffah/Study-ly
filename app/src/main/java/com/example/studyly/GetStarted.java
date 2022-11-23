@@ -13,9 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 public class GetStarted extends AppCompatActivity {
 
 
-    //authentication
-    private FirebaseAuth mAuth;
-    private DatabaseReference databaseReference;
+
 
 
     @Override
@@ -24,12 +22,6 @@ public class GetStarted extends AppCompatActivity {
         setContentView(R.layout.activity_get_started);
 
 
-//        if(mAuth.getCurrentUser()!= null)
-//        {
-//            Intent intent = new Intent(getApplicationContext(),HomePage.class);
-//            startActivity(intent);
-//            finish();
-//        }
 
         Button get_btn = (Button) findViewById(R.id.getstartedbtn);
         get_btn.setOnClickListener(new View.OnClickListener() {

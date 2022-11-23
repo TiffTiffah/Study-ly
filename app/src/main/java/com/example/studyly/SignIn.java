@@ -44,7 +44,7 @@ public class SignIn extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //open HomePage after login
-        Button sign_in_btn = (Button) findViewById(R.id.sign_in_button);
+        Button sign_in_btn = (Button) findViewById(R.id.sign_in_btn);
         sign_in_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

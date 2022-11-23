@@ -28,7 +28,7 @@
 
        <item
         android:icon="@drawable/ic_baseline_settings_24"
-        android:id="@+id/settings"
+        android:id="@+id/settings_page"
         android:title="@string/profile"
         />
 

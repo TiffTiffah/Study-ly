@@ -1,5 +1,4 @@
 package com.example.studyly;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,9 +64,6 @@ public class HomePage extends AppCompatActivity {
         new_event = findViewById(R.id.create_event);
 
 
-
-
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -80,10 +76,11 @@ public class HomePage extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
                 if(userProfile != null)
                 {
-                    String name =userProfile.full_name;
-                    String email = userProfile.email;
 
-                    greetings.setText("Hello "+name+"!");
+                    String username = userProfile.username;
+
+
+                    greetings.setText("Hello "+username+"!");
 
 
 
@@ -97,7 +94,13 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-            //reference the bottom nav menu
+
+
+
+
+
+
+        //reference the bottom nav menu
         bottom_nav_menu = findViewById(R.id.bottom_nav);
 
         //setting the activity to the selected item
@@ -131,24 +134,25 @@ public class HomePage extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Notes.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(),Settings.class));
+
+
+                    case R.id.settings_page:
+                        startActivity(new Intent(getApplicationContext(),Options.class));
                         overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
         });
 
-        }
-
-
-        //new note function
+    }
+    //new note function
     private void addNote() {
         AlertDialog.Builder noteDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
 
         View note_view = inflater.inflate(R.layout.activity_new_note, null);
-                noteDialog.setView(note_view);
+        noteDialog.setView(note_view);
 
         AlertDialog dialog = noteDialog.create();
         dialog.setCancelable(true);
@@ -211,13 +215,13 @@ public class HomePage extends AppCompatActivity {
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Tasks");
+        reference = FirebaseDatabase.getInstance().getReference("Tasks").child(userID).child("tasks");
         userID = user.getUid();
 
         //hooks
         final ImageView cancel = task_view.findViewById(R.id.cancel);
         final Button add_task = task_view.findViewById(R.id.addTask_btn);
-        final TextView description = task_view.findViewById(R.id.task_descrpt);
+         TextView description = task_view.findViewById(R.id.task_descrpt);
 
         //close the alert dialog
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -229,10 +233,13 @@ public class HomePage extends AppCompatActivity {
 
         //save the tasks to database
         add_task.setOnClickListener(new View.OnClickListener() {
+
+
+            String descrpt = description.getText().toString();
             @Override
             public void onClick(View view) {
-                reference.child(userID).child("Description").push().setValue(description.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                TaskModel taskModel = new TaskModel(descrpt);
+                reference.push().setValue(taskModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful())

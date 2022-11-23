@@ -14,6 +14,7 @@
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/general_settings.xml" value="0.205" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.114" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1" />
+        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/input_bg.xml" value="0.247" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/note_design.xml" value="0.205" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/note_page_design.xml" value="0.205" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/drawable/rounded_corners.xml" value="0.2375" />
@@ -27,15 +28,18 @@
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_new_note.xml" value="0.264" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_new_task.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_note_page.xml" value="0.25" />
+        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_notepage.xml" value="0.2359375" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_notes.xml" value="0.25" />
+        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_options.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_settings.xml" value="0.25" />
+        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_settings_page.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/activity_tasks.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/fragment_about.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/fragment_contacts.xml" value="0.25" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/fragment_policy.xml" value="0.16485507246376813" />
-        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/note_card.xml" value="0.11168032786885246" />
+        <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/note_card.xml" value="0.264" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/layout/task_design.xml" value="0.4" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15503875968992248" />
         <entry key="..\:/Users/25470/Desktop/TIFFAH/3.1/CMT 314/Studyly/app/src/main/res/menu/bottom_navigation.xml" value="0.25" />

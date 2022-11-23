@@ -50,8 +50,8 @@ public  class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
-            title= itemView.findViewById(R.id.textName);
-            note= itemView.findViewById(R.id.note);
+            title= itemView.findViewById(R.id.titleName);
+            note= itemView.findViewById(R.id.noteText);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

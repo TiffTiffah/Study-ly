@@ -33,7 +33,7 @@ public class SignUp extends AppCompatActivity {
         private Button sign_up_btn;
 
         //defines data
-        private EditText reg_name, reg_email,reg_password1, reg_password2;
+        private EditText reg_name, reg_username, reg_email,reg_password1, reg_password2;
 
         //authentication
         private FirebaseAuth mAuth;
@@ -52,6 +52,7 @@ public class SignUp extends AppCompatActivity {
             //referencing
             reg_email = findViewById(R.id.email);
             reg_name = findViewById(R.id.full_name);
+            reg_username = findViewById(R.id.username);
             reg_password1 = findViewById(R.id.password);
             reg_password2 = findViewById(R.id.confirm_password);
 
@@ -76,6 +77,7 @@ public class SignUp extends AppCompatActivity {
                     String str_password = reg_password1.getText().toString();
                     String str_confirm_password = reg_password2.getText().toString();
                     String str_full_name = reg_name.getText().toString();
+                    String str_user_name = reg_username.getText().toString();
 
 
                     //validating the user's input
@@ -89,6 +91,12 @@ public class SignUp extends AppCompatActivity {
                         reg_name.setError("Fullname is required!");
                         return;
                     }
+                    if(TextUtils.isEmpty(str_user_name))
+                    {
+                        reg_username.setError("Username is required!");
+                        return;
+                    }
+
                     if(TextUtils.isEmpty(str_password))
                     {
                         reg_password1.setError("Password is required!");
@@ -119,7 +127,7 @@ public class SignUp extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
 
-                                        User user = new User(str_full_name,str_email,str_confirm_password);
+                                        User user = new User(str_full_name,str_email,str_confirm_password,str_user_name);
 
                                         //send data to the database
                                         FirebaseDatabase.getInstance().getReference("Users")

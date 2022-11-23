@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "484391960617",
-    "firebase_url": "https://studyly-3eecd-default-rtdb.firebaseio.com",
-    "project_id": "studyly-3eecd",
-    "storage_bucket": "studyly-3eecd.appspot.com"
+    "project_number": "489363942101",
+    "project_id": "studyly-2c55c",
+    "storage_bucket": "studyly-2c55c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:484391960617:android:1957a6a7cbe1dcac045c38",
+        "mobilesdk_app_id": "1:489363942101:android:141d4154c1a22cf5f3d05c",
         "android_client_info": {
           "package_name": "com.example.studyly"
         }
       },
       "oauth_client": [
         {
-          "client_id": "484391960617-70ie2mp7q3ctk7bs7vb2nh9f6fcl4hm0.apps.googleusercontent.com",
+          "client_id": "489363942101-ilngeeff7d8n4ratdprdtco921hneblv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0Gc0dSZ7NNefLRtIenl-8vJ8ap_BdRAc"
+          "current_key": "AIzaSyDYsAjNerxuuS137NmtDRBKKWfDoDi_R5k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "484391960617-70ie2mp7q3ctk7bs7vb2nh9f6fcl4hm0.apps.googleusercontent.com",
+              "client_id": "489363942101-ilngeeff7d8n4ratdprdtco921hneblv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

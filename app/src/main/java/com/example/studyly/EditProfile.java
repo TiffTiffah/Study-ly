@@ -27,7 +27,7 @@ Button update;
 
 private FirebaseUser user;
 private DatabaseReference reference;
-private String userID, name, email, password, confirm_password;
+private String userID, name, email, password, confirm_password, username;
 
 
     @Override
@@ -40,8 +40,8 @@ private String userID, name, email, password, confirm_password;
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Settings.class);
-                startActivity(intent);
+
+                startActivity(new Intent(getApplicationContext(),Options.class));
             }
         });
 
@@ -53,6 +53,7 @@ private String userID, name, email, password, confirm_password;
         final EditText email_view = (EditText) findViewById(R.id.edit_email);
         final EditText password_view = (EditText) findViewById(R.id.edit_password);
         final EditText con_password_view = (EditText) findViewById(R.id.new_confirm_pass);
+        final EditText username_view = (EditText) findViewById(R.id.edit_username);
 
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -65,11 +66,14 @@ private String userID, name, email, password, confirm_password;
                      email = userProfile.email;
                      password  =userProfile.password;
                      confirm_password =userProfile.password;
+                     username =userProfile.username;
 
                     name_view.setText(name);
                     email_view.setText(email);
                     password_view.setText(password);
                     con_password_view.setText(password);
+                    username_view.setText(username);
+
 
 
                 }
@@ -91,6 +95,7 @@ private String userID, name, email, password, confirm_password;
              public void onClick(View view) {
 
                  reference.child(userID).child("full_name").setValue(name_view.getText().toString());
+                 reference.child(userID).child("username").setValue(username_view.getText().toString());
                  reference.child(userID).child("email").setValue(email_view.getText().toString());
                  reference.child(userID).child("password").setValue(password_view.getText().toString());
 

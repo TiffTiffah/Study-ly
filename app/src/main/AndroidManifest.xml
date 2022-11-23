@@ -16,10 +16,13 @@
         android:theme="@style/Theme.Studyly"
         tools:targetApi="31">
         <activity
-            android:name=".NewTask"
+            android:name=".Notepage"
             android:exported="false" />
         <activity
-            android:name=".Notepage"
+            android:name=".Options"
+            android:exported="false" />
+        <activity
+            android:name=".NewTask"
             android:exported="false" />
         <activity
             android:name=".NewNote"

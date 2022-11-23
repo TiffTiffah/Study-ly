@@ -12,14 +12,12 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class Events extends AppCompatActivity {
 
-    //create object bottom nav menu
     BottomNavigationView bottom_nav_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-
 
         //reference the bottom nav menu
         bottom_nav_menu = findViewById(R.id.bottom_nav);
@@ -48,6 +46,7 @@ public class Events extends AppCompatActivity {
                         return true;
 
                     case R.id.events:
+
                         return true;
 
 
@@ -55,11 +54,17 @@ public class Events extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Notes.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.settings:
+
+
+                    case R.id.settings_page:
+                        startActivity(new Intent(getApplicationContext(),Options.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
     }
+
+
 }

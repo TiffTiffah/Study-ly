@@ -22,10 +22,11 @@
                 android:textSize="24dp"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/textName"
+                android:id="@+id/titleName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="5dp"
+                android:text="Title"
                 android:textSize="24dp"
                 android:textColor="@color/purple"/>
         </LinearLayout>
@@ -42,8 +43,9 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/note"
+                android:id="@+id/noteText"
                 android:paddingStart="5dp"
+                android:text="Note Content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"

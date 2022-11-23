@@ -25,7 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.security.Policy;
 
-public class Settings extends AppCompatActivity {
+public class Options extends AppCompatActivity {
+
 
     //create object bottom nav menu
     BottomNavigationView bottom_nav_menu;
@@ -40,7 +41,7 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_options);
 
         edit_profile = findViewById(R.id.edit_profile);
         edit_profile.setOnClickListener(new View.OnClickListener() {
@@ -78,10 +79,9 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-                Toast.makeText(Settings.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Options.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
             }
         });
-
 
         //open policy
         policy = findViewById(R.id.terms);
@@ -108,7 +108,7 @@ public class Settings extends AppCompatActivity {
         });
 
         //open contact us
-         TextView contact_us = findViewById(R.id.contacts);
+        TextView contact_us = findViewById(R.id.contacts);
         contact_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,12 +134,11 @@ public class Settings extends AppCompatActivity {
 
 
 
-
         //reference the bottom nav menu
         bottom_nav_menu = findViewById(R.id.bottom_nav);
 
         //setting the activity to the selected item
-        bottom_nav_menu.setSelectedItemId(R.id.settings);
+        bottom_nav_menu.setSelectedItemId(R.id.tasks);
 
 
         //if the item that is not selected is clicked, open the activity
@@ -171,11 +170,16 @@ public class Settings extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Notes.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.settings:
+
+
+                    case R.id.settings_page:
+
                         return true;
                 }
                 return false;
             }
         });
     }
+
+
 }
